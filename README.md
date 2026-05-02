@@ -128,6 +128,8 @@ Current (DoH) is 7.4 ms faster than Cloudflare-direct (likely connection reuse)
 
 In this run, **DoH was actually faster than plain UDP** — likely due to TLS/H2 connection reuse against an already-warm cloudflare-dns.com session. Cloudflare-v6 narrowly beats it because the system happened to be using the IPv4 path.
 
+A full real-run transcript (default 5 passes, 12 domains, 7 resolvers) is checked in at [`samples/windows11-cloudflare-doh.log`](samples/windows11-cloudflare-doh.log) with [analysis notes](samples/README.md).
+
 ## Interpreting the results
 
 Read the table carefully — the "winner" can be misleading.

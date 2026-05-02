@@ -1,0 +1,119 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20260502200024
+Username: KAI\Admin
+RunAs User: KAI\Admin
+Configuration Name: 
+Machine: KAI (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -file  C:\Users\Admin\Downloads\dns-bench-windows-main\dns-bench.ps1 
+Process ID: 7568
+PSVersion: 5.1.26100.8115
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8115
+BuildVersion: 10.0.26100.8115
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+DNS Benchmark - 05/02/2026 20:00:24
+Log: C:\Users\Admin\Desktop\dns-bench-20260502-200024.log
+PowerShell: 5.1.26100.8115
+Domains: 12 | Passes: 5
+=== Current Windows DNS configuration ===
+
+InterfaceAlias ServerAddresses
+-------------- ---------------
+Ethernet       {1.1.1.1, 1.0.0.1}
+
+
+
+InterfaceAlias ServerAddresses
+-------------- ---------------
+Ethernet       {2606:4700:4700::1111, 2606:4700:4700::1001}
+
+
+=== DoH templates (DNS-over-HTTPS) ===
+
+ServerAddress        DohTemplate                          AllowFallbackToUdp AutoUpgrade
+-------------        -----------                          ------------------ -----------
+149.112.112.112      https://dns.quad9.net/dns-query                   False       False
+9.9.9.9              https://dns.quad9.net/dns-query                   False       False
+8.8.8.8              https://dns.google/dns-query                      False       False
+8.8.4.4              https://dns.google/dns-query                      False       False
+1.1.1.1              https://cloudflare-dns.com/dns-query               True       False
+1.0.0.1              https://cloudflare-dns.com/dns-query               True       False
+2001:4860:4860::8844 https://dns.google/dns-query                      False       False
+2001:4860:4860::8888 https://dns.google/dns-query                      False       False
+2606:4700:4700::1001 https://cloudflare-dns.com/dns-query               True       False
+2606:4700:4700::1111 https://cloudflare-dns.com/dns-query               True       False
+2620:fe::9           https://dns.quad9.net/dns-query                   False       False
+2620:fe::fe          https://dns.quad9.net/dns-query                   False       False
+
+
+Running 5 passes...
+--- Pass 1 ---
+Current (DoH)        system                     avg:   17.9ms  min:   14.2ms  max:   29.5ms  stdev:    4.2ms
+Cloudflare-direct    1.1.1.1                    avg:   19.5ms  min:   15.8ms  max:   24.4ms  stdev:    2.5ms
+Cloudflare-v6        2606:4700:4700::1111       avg:     16ms  min:   13.3ms  max:   24.4ms  stdev:      3ms
+Quad9                9.9.9.9                    avg:   20.5ms  min:   17.4ms  max:   27.8ms  stdev:    2.9ms
+Google               8.8.8.8                    avg:   27.5ms  min:   19.2ms  max:   47.2ms  stdev:   10.6ms
+OpenDNS              208.67.222.222             avg:   49.9ms  min:     39ms  max:   72.8ms  stdev:   12.7ms
+Router               192.168.0.1                avg:   15.5ms  min:    3.6ms  max:   23.3ms  stdev:    5.7ms
+
+--- Pass 2 ---
+Current (DoH)        system                     avg:   15.9ms  min:   13.6ms  max:   18.4ms  stdev:    1.3ms
+Cloudflare-direct    1.1.1.1                    avg:   19.9ms  min:   17.5ms  max:   26.7ms  stdev:    2.9ms
+Cloudflare-v6        2606:4700:4700::1111       avg:   16.3ms  min:   13.7ms  max:   23.4ms  stdev:    2.4ms
+Quad9                9.9.9.9                    avg:   18.8ms  min:   16.7ms  max:   20.1ms  stdev:    1.1ms
+Google               8.8.8.8                    avg:   22.4ms  min:   19.2ms  max:   43.4ms  stdev:    6.7ms
+OpenDNS              208.67.222.222             avg:   44.7ms  min:     40ms  max:   68.8ms  stdev:    8.6ms
+Router               192.168.0.1                avg:    2.9ms  min:      2ms  max:      4ms  stdev:    0.5ms
+
+--- Pass 3 ---
+Current (DoH)        system                     avg:   15.8ms  min:   13.5ms  max:     24ms  stdev:    2.7ms
+Cloudflare-direct    1.1.1.1                    avg:   18.6ms  min:   16.9ms  max:   20.1ms  stdev:    1.1ms
+Cloudflare-v6        2606:4700:4700::1111       avg:   15.3ms  min:   13.5ms  max:   16.7ms  stdev:    1.1ms
+Quad9                9.9.9.9                    avg:   18.9ms  min:   17.1ms  max:   21.9ms  stdev:    1.3ms
+Google               8.8.8.8                    avg:   23.3ms  min:   18.3ms  max:   40.9ms  stdev:    7.6ms
+OpenDNS              208.67.222.222             avg:   44.5ms  min:   38.2ms  max:   64.9ms  stdev:    8.2ms
+Router               192.168.0.1                avg:    2.6ms  min:    1.9ms  max:    3.2ms  stdev:    0.5ms
+
+--- Pass 4 ---
+Current (DoH)        system                     avg:   15.9ms  min:   13.7ms  max:   22.2ms  stdev:    2.3ms
+Cloudflare-direct    1.1.1.1                    avg:   19.5ms  min:   16.7ms  max:     26ms  stdev:    2.8ms
+Cloudflare-v6        2606:4700:4700::1111       avg:   15.9ms  min:   14.2ms  max:   16.9ms  stdev:    0.8ms
+Quad9                9.9.9.9                    avg:   20.5ms  min:     19ms  max:   25.2ms  stdev:    1.7ms
+Google               8.8.8.8                    avg:   23.3ms  min:   18.9ms  max:   41.3ms  stdev:    6.3ms
+OpenDNS              208.67.222.222             avg:   44.9ms  min:   39.9ms  max:   77.9ms  stdev:   10.7ms
+Router               192.168.0.1                avg:    2.9ms  min:    1.9ms  max:    4.5ms  stdev:    0.7ms
+
+--- Pass 5 ---
+Current (DoH)        system                     avg:   15.9ms  min:     14ms  max:   18.9ms  stdev:    1.4ms
+Cloudflare-direct    1.1.1.1                    avg:   18.7ms  min:   16.4ms  max:   20.4ms  stdev:    1.2ms
+Cloudflare-v6        2606:4700:4700::1111       avg:   15.2ms  min:   13.7ms  max:   17.1ms  stdev:    1.2ms
+Quad9                9.9.9.9                    avg:   21.7ms  min:   16.9ms  max:   49.5ms  stdev:    8.9ms
+Google               8.8.8.8                    avg:   22.1ms  min:   18.1ms  max:   41.8ms  stdev:    6.4ms
+OpenDNS              208.67.222.222             avg:   42.2ms  min:   38.5ms  max:   54.2ms  stdev:    4.6ms
+Router               192.168.0.1                avg:    3.1ms  min:    1.9ms  max:    4.5ms  stdev:    0.7ms
+
+=== Final ranking (avg of all passes) ===
+
+Resolver          ColdMs WarmMs OverallMs
+--------          ------ ------ ---------
+Router              15.5    2.9       5.4
+Cloudflare-v6         16   15.7      15.7
+Current (DoH)       17.9   15.9      16.3
+Cloudflare-direct   19.5   19.2      19.2
+Quad9               20.5     20      20.1
+Google              27.5   22.8      23.7
+OpenDNS             49.9   44.1      45.2
+
+
+Fastest overall: Router at 5.4ms avg
+(Note: Router entries are usually misleading -- they cache after pass 1.)
+Current (DoH) is 2.9 ms faster than Cloudflare-direct (likely connection reuse)
+**********************
+Windows PowerShell transcript end
+End time: 20260502200036
+**********************
