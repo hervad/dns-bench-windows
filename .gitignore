@@ -1,6 +1,7 @@
 # Benchmark logs
 dns-bench-*.log
 *.log
+!samples/*.log
 
 # Windows
 Thumbs.db
