@@ -1,0 +1,19 @@
+# Benchmark logs
+dns-bench-*.log
+*.log
+
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+*.bak
+*.tmp
+
+# Claude Code project state
+.claude/
